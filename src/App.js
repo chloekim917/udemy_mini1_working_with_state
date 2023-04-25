@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// don't change the Component name "App"
+// important: In this code editor, use React.useState() instead of just useState()
+export default function App() {
+     const [price, setPrice] = React.useState(100);
+    
+     const clickHandler = () => {
+         setPrice(75)
+     }
+    
+    return (
+        <div>
+            <p>${price}</p>
+            <button onClick={clickHandler}>Apply Discount</button>
+        </div>
+    );
 }
-
-export default App;
